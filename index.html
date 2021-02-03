@@ -8,10 +8,9 @@
   body { display: grid; font-family: sans-serif; height: 100vh; width: 100vw; overflow: hidden; justify-content: center; justify-items: center; grid-template-rows: auto auto auto 1fr; grid-gap: 1rem; }
   input, p  { max-width: min(30em, 90vw); }
   input { font-size: 400%; outline: none; border: none;}
-  svg { stroke: black; fill: none; stroke-width: 0.1;
-     stroke-linecap: round; stroke-linejoin: round; height: 100%;}
+  svg { stroke: black; fill: none; stroke-width: 0.1; stroke-linecap: round; stroke-linejoin: round; height: 100%;}
 </style>
-<svg id=num width=300 height=500 viewBox="-1.1 -1.1 2.2 5.2">
+<svg id=num width=400 height=600 viewBox="-1.1 -0.1 2.2 3.2">
   <defs>
     <path id = bar d="M0,0 L0,3" />
     <path id = _0 d="M0,0" />
@@ -44,6 +43,6 @@
   }
   const n = document.querySelector("input");
   n.addEventListener('input', e => set([...e.target.value].reverse()));
-  n.addEventListener('blur', e => e.target.focus());
+ // n.addEventListener('blur', e => e.target.focus());
   set(n.value);
 </script>

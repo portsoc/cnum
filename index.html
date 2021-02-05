@@ -32,7 +32,7 @@
   <use transform-origin="0 1.5" transform="scale(-1 -1)" id=d1000 />
 </svg>
 
-<input autofocus type="number" min=0 max=9999 value="" placeholder=0></input>
+<input autofocus type="number" min=0 max=9999 placeholder=0></input>
 <p>Change the number to see it as a <a href="https://en.wikipedia.org/wiki/Cistercian_numerals">Cistercian numeral</a>.</p>
 
 <script>
@@ -44,6 +44,6 @@
   }
   const n = document.querySelector("input");
   n.addEventListener('input', e => set([...e.target.value].reverse()));
- // n.addEventListener('blur', e => e.target.focus());
+  n.value = 0;
   set(n.value);
 </script>

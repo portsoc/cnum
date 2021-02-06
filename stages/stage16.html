@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cistercian Numerals</title>
+
+<style>
+  body {display: grid;}
+  input { font-size: 20vmin; outline: none; border: none; text-align: center;}
+  svg { stroke: black; fill: none; stroke-width: 0.1; stroke-linecap: round; stroke-linejoin: round;}
+</style>
+
+<svg width="600" height="600" viewBox="-1.6 -0.1 3.2 3.2">
+
+  <defs>
+    <path id="_0" d="M0,0" />
+    <path id="_1" d="M0,0 L1,0" />
+    <path id="_2" d="M0,1 L1,1" />
+    <path id="_3" d="M0,0 L1,1" />
+    <path id="_4" d="M0,1 L1,0" />
+    <path id="_5" d="M0,1 L1,0 0,0" />
+    <path id="_6" d="M1,0 L1,1" />
+    <path id="_7" d="M0,0 L1,0 1,1" />
+    <path id="_8" d="M0,1 L1,1 1,0" />
+    <path id="_9" d="M0,0 L1,0 1,1 0,1" />
+  </defs>
+
+  <path d="M0,0 L0,3" />
+  <use href="#_4" id="d1" />
+  <use href="#_4" id="d10" transform="scale(-1 1)" />
+  <use href="#_4" id="d100" transform="scale(1 -1)" transform-origin="0 1.5" />
+  <use href="#_4" id="d1000" transform="scale(-1 -1)" transform-origin="0 1.5" />
+</svg>
+
+<input id=entered autofocus type="number" min=0 max=9999 placeholder=0></input>
+
+<script>
+  function changeNumeral(e) {
+
+    const newValue = e.target.value;
+    const reversed = [...newValue].reverse();
+    console.log(newValue, reversed);
+
+    const htu = document.querySelectorAll("#d1, #d10, #d100, #d1000");
+    for (let x=0; x<4; x++) {
+      htu[x].setAttribute('href', "#_"+newValue[x]);
+    }
+  }
+
+  const n = document.querySelector("#entered");
+  n.addEventListener('input', changeNumeral);
+</script>

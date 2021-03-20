@@ -35,7 +35,7 @@
   function changeNumeral(e) {
     const newValue = e.target.value;
     console.log("Changing numeral to ", newValue)
-    document.querySelector("#d1").setAttribute('href', "#_"+e.target.value);
+    document.querySelector("#d1").setAttribute('href', "#_"+newValue);
   }
 
   const n = document.querySelector("#entered");

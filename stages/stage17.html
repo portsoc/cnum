@@ -37,11 +37,10 @@
 <script>
   function changeNumeral(newValue) {
     const reversed = [...newValue].reverse();
-    console.log(newValue, reversed);
 
     const htu = document.querySelectorAll("#d1, #d10, #d100, #d1000");
     for (let x=0; x<4; x++) {
-      htu[x].setAttribute('href', "#_"+newValue[x]);
+      htu[x].setAttribute('href', "#_"+reversed[x]);
     }
   }
 
